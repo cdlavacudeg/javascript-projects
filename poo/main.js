@@ -75,3 +75,106 @@ const miguel=new Student2(
 );
 miguel.aprobarCurso('React');
 miguel.cumplirA();
+
+// Ventajas de POO
+const juan1 = {
+    name: "JuanDC",
+    username: "juandc",
+    points: 100,
+    socialMedia: {
+      twitter: "fjuandc",
+       instagram: "fjuandc",
+      facebook: undefined,
+   },
+   aprovedCourses:[
+       'Curso definitivo de HTML y CSS',
+       'Curso práctico de HTML y CSS'
+   ],
+   learningPaths:[
+        {
+            name: "Desarrollo Web",
+            courses: [
+                "Curso Definitivo de HTML y CSS",
+                "Curso Práctico de HTML y CSS",
+                "Curso de Responsive Design",
+            ]
+        },
+        {
+            name: "Escuela de videojuegos",
+            courses: [
+                "Curso Introducción a la producción de VGS",
+                "Curso Ureal Engine",
+                "Curso de Unity 3D",
+            ]
+        },
+   ],
+};
+//es demasiado tedioso si tenemos muchos estudiantes
+class LearningPath{
+    constructor({
+        name,
+        courses
+    }){
+        this.name=name;
+        this.courses=courses;
+    }
+}
+
+const escuelaWeb= new LearningPath({
+    name:'Escuela de desarrollo Web',
+    courses: [
+        "Curso Definitivo de HTML y CSS",
+        "Curso Práctico de HTML y CSS",
+        "Curso de Responsive Design",
+    ]
+})
+
+const escuelaVJ= new LearningPath({
+    name: "Escuela de videojuegos",
+    courses: [
+        "Curso Introducción a la producción de VGS",
+        "Curso Ureal Engine",
+        "Curso de Unity 3D",
+    ]
+});
+
+class Student3{
+    constructor({
+        name,
+        email,
+        username,
+        twitter=undefined,
+        instagram=undefined,
+        facebook=undefined,
+        aprovedCourses=[],
+        learningPaths=[]
+    }){
+        this.name=name;
+        this.email=email;
+        this.username=username;
+        this.socialMedia={
+            twitter,
+            instagram,
+            facebook
+        };
+        this.aprovedCourses=aprovedCourses;
+        this.learningPaths=learningPaths;
+    }
+
+}
+
+const juan2 = new Student3 ({
+    name: "JuanDC",
+    username: "juandc",
+    email: "juanito@juanito.com",
+    twitter: "fjuandc",
+    learningPaths:[escuelaWeb],
+});
+
+const miguelito2 = new Student3({
+    name: "Miguelito",
+    username: "migelitofeliz",
+    email: "juanito@juanito.com",
+    twitter: "fjuandc",
+    learningPaths:[escuelaVJ,escuelaWeb]
+  });
