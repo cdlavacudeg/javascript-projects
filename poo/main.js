@@ -44,3 +44,34 @@ const juanita= new Student(
 
 juanita.cumplirA();
 juanita.aprobarCurso('React');
+
+// Prototipos con la sintaxis de clases
+
+class Student2{
+    constructor({
+            name, 
+            age, 
+            cursosAprobados=[],
+            email='ejemplo@gmail.com',
+        }){
+        this.name=name;
+        this.age=age;
+        this.cursosAprobados=cursosAprobados;
+        this.email=email;
+        this.aprobarCurso=function(nuevoCurso){
+            this.cursosAprobados.push(nuevoCurso);
+        };
+    }
+    cumplirA(){
+        this.age+=1;
+    }
+}
+
+const miguel=new Student2(
+    {
+        name:'Miguel',
+        age:28,
+    }
+);
+miguel.aprobarCurso('React');
+miguel.cumplirA();
