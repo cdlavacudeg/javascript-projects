@@ -113,7 +113,7 @@ const juan1 = {
 class LearningPath{
     constructor({
         name,
-        courses
+        courses=[]
     }){
         this.name=name;
         this.courses=courses;
@@ -133,8 +133,15 @@ const escuelaVJ= new LearningPath({
     name: "Escuela de videojuegos",
     courses: [
         "Curso Introducción a la producción de VGS",
-        "Curso Ureal Engine",
+        "Curso Unreal Engine",
         "Curso de Unity 3D",
+    ]
+});
+const escuelaData= new LearningPath({
+    name: "Escuela de Data Science",
+    courses: [
+        "Curso DataBusiness",
+        "Curso Dataviz",
     ]
 });
 
