@@ -5,17 +5,23 @@ import Course from "./course.js";
 //Courses
 const cursoProgBasic=new Course({
     name:'Programación Básica'
-})
+});
+console.log(cursoProgBasic);
+console.log(cursoProgBasic.name);
+cursoProgBasic.name="Nuevo Nombre";
+console.log(cursoProgBasic);
+console.log(cursoProgBasic.name);
+
 const cursoDefinitivoHTML=new Course({
     name:'Curso Definitivo de HTML y CSS'
-})
+});
 const cursoPracticoHTML=new Course({
     name:'Curso Práctico de HTML y CSS'
-})
+});
 
 const cursoResponsive = new Course({
     name:'Curso Responsive'
-})
+});
 
 // Learning Paths
 const escuelaWeb= new LearningPath({
