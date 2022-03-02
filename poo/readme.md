@@ -112,3 +112,5 @@ La ventaja que tenemos de esta manera, es que podemos establecer los atributos q
 Nota adicional:En ES2020 se introdujo la sintaxis campos privados en las clases. Se hace uso de un numeral como prefijo del nombre de la variable.
  
 ¿Cúal sería la ventaja de usar esto? Que no existe la posibilidad de que alguien modifique la variable privada desde la instancia a menos de que use el setter que le dimos.
+
+## Módulos de ECMAScript 6
