@@ -1,4 +1,4 @@
-import {Student,FreeStudent,BasicStudent,ExpertStudent} from "./student.js";
+import {Student,FreeStudent,BasicStudent,ExpertStudent,TeacherStudent} from "./student.js";
 import LearningPath from "./learningPath.js";
 import Course from "./course.js";
 
@@ -49,6 +49,7 @@ const escuelaData= new LearningPath({
     ]
 });
 
+// Students
 const juan2 = new BasicStudent({
     name: "JuanDC",
     username: "juandc",
@@ -64,7 +65,17 @@ const miguelito2 = new FreeStudent({
     twitter: "fjuandc",
     learningPaths:[escuelaVJ,escuelaWeb]
 });
-miguelito2.aproveCourse(cursoDefinitivoHTML);
-miguelito2.aproveCourse(cursoProgBasic);
-juan2.aproveCourse(cursoResponsive);
-console.log(miguelito2.aprovedCourses);
+
+// Teachers
+
+const fredy= new TeacherStudent({
+    name: "Fredy Vega",
+    username: "fredyVega",
+    email: "f@gep.com",
+    twitter: "fvega",
+    learningPaths:[escuelaVJ,escuelaWeb]
+});
+console.log(miguelito2);
+miguelito2.publicarComentario('Excelente Curso');
+console.log(fredy);
+fredy.publicarComentario('Bienvenidos');

@@ -1,3 +1,4 @@
+import { Comment } from "./polimor.js";
 class Student{
     constructor({
         name,
@@ -20,7 +21,13 @@ class Student{
         this.aprovedCourses=aprovedCourses;
         this.learningPaths=learningPaths;
     }
-
+    publicarComentario(commentContent){
+        const comment = new Comment({
+            content:commentContent,
+            studentName:this.name,
+        });
+        comment.publicar();
+    }
 }
 
 class ExpertStudent extends Student {
@@ -58,4 +65,24 @@ class BasicStudent extends Student {
     }
 }
 
-export {Student,FreeStudent,BasicStudent,ExpertStudent};
+class TeacherStudent extends Student{
+    constructor(props){
+        super(props);
+    }
+
+    aproveCourse(newCourse){
+        this.aprovedCourses.push(newCourse);   
+    }
+
+    publicarComentario(commentContent){
+        const comment = new Comment({
+            content:commentContent,
+            studentName:this.name,
+            studentRole:"Profesor",
+        });
+        comment.publicar();
+    }
+
+}
+
+export {Student,FreeStudent,BasicStudent,ExpertStudent,TeacherStudent};
