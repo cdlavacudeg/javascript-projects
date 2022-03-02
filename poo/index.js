@@ -1,16 +1,13 @@
-import Student from "./student.js";
+import {Student,FreeStudent,BasicStudent,ExpertStudent} from "./student.js";
 import LearningPath from "./learningPath.js";
 import Course from "./course.js";
 
 //Courses
 const cursoProgBasic=new Course({
-    name:'Programación Básica'
+    name:'Programación Básica',
+    isFree:true,
 });
-console.log(cursoProgBasic);
-console.log(cursoProgBasic.name);
-cursoProgBasic.name="Nuevo Nombre";
-console.log(cursoProgBasic);
-console.log(cursoProgBasic.name);
+
 
 const cursoDefinitivoHTML=new Course({
     name:'Curso Definitivo de HTML y CSS'
@@ -20,7 +17,8 @@ const cursoPracticoHTML=new Course({
 });
 
 const cursoResponsive = new Course({
-    name:'Curso Responsive'
+    name:'Curso Responsive',
+    lang:'English',
 });
 
 // Learning Paths
@@ -51,7 +49,7 @@ const escuelaData= new LearningPath({
     ]
 });
 
-const juan2 = new Student({
+const juan2 = new BasicStudent({
     name: "JuanDC",
     username: "juandc",
     email: "juanito@juanito.com",
@@ -59,12 +57,14 @@ const juan2 = new Student({
     learningPaths:[escuelaWeb],
 });
 
-const miguelito2 = new Student({
+const miguelito2 = new FreeStudent({
     name: "Miguelito",
     username: "migelitofeliz",
     email: "juanito@juanito.com",
     twitter: "fjuandc",
     learningPaths:[escuelaVJ,escuelaWeb]
 });
-
-console.log(miguelito2);
+miguelito2.aproveCourse(cursoDefinitivoHTML);
+miguelito2.aproveCourse(cursoProgBasic);
+juan2.aproveCourse(cursoResponsive);
+console.log(miguelito2.aprovedCourses);

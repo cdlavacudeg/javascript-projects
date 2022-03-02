@@ -2,10 +2,14 @@ export default class Course{
     #name;
     constructor({
         name,
-        clases=[]
+        clases=[],
+        isFree=false,
+        lang="Spanish",
     }){
         this.#name=name;//guion # no permite que se llame el atributo
         this.clases=clases;
+        this.isFree=isFree;
+        this.lang=lang;
     }
     //getters y setters
     get name(){

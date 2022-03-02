@@ -114,3 +114,9 @@ Nota adicional:En ES2020 se introdujo la sintaxis campos privados en las clases.
 ¿Cúal sería la ventaja de usar esto? Que no existe la posibilidad de que alguien modifique la variable privada desde la instancia a menos de que use el setter que le dimos.
 
 ## Módulos de ECMAScript 6
+
+## Herencia
+[Documentación](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+
+La herencia nos permite crear “clases madre”, la cual servirá de molde para clases hijas, que compartirán sus métodos y atributos.
+Usamos la palabra reservada `extends`.
