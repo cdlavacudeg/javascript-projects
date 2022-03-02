@@ -83,3 +83,19 @@ Object.getOwnPropertyDescriptors(objetito)
 El objetivo del encapsulamiento es limitiar quien puede modificar, acceder o ejecutar nuestros metodos o atributos de la clase o prototipo.
 
 Ahora con las propiedades writable configurable enumerable podemos limitar quien tiene acceso, modificar nuestros objetos.
+
+## Cambios en propiedades Object.defineProperty:
+
+Propiedad en false:
+
+|                            | Enumerable | Writable | Configurable |
+|----------------------------|:-----------:|:----------:|:--------------:|
+| Object.keys()              |      x     |     o    |       o      |
+| Object.getOwnPropertyNames |      o     |     o    |       o      |
+| Modificar Value            |      o     |     x    |       o      |
+| Eliminar propiedad         |      o     |     o    |       x      |
+
+```javascript
+Object.seal():No se puede borrar.
+Object.freeze():No se puede borrar ni modificar.
+```
