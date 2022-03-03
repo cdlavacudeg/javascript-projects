@@ -68,4 +68,31 @@ function deepCopy(subject){
     return copySubject;
 }
 
-const obj6=deepCopy(obj1)
+const obj6=deepCopy(obj1);
+
+// abstracción con objetos literales y deep copy
+
+const studentBase={
+    name:undefined,
+    email:undefined,
+    age:undefined,
+    approvedCourses:undefined,
+    lerningpath:undefined,
+    socialMedia:{
+        twitter:undefined,
+        instagram:undefined,
+        facebook:undefined,
+    }
+};
+
+const juan=deepCopy(studentBase);
+Object.seal(juan);
+// Object.defineProperty(juan,'name',{
+//     value:'Juanito',
+//     configurable:false,
+// })
+
+juan.name='Juanito';
+console.log(Object.isSealed(juan));
+console.log(Object.isFrozen(juan));
+
