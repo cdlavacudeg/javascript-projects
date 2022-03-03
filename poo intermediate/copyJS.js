@@ -128,27 +128,40 @@ function createStudent({
         },
         approvedCourses,
         lerningpaths,
-        readName(){
-            return private._name;
+
+        get name(){
+            return private["_name"];
         },
-        changeName(newName){
-            private._name=newName;
-        },    
+        set name(newName){
+            if(newName.length!=0){
+                private["_name"]=newName;
+            }else{
+                console.warn("Tu nombre debe tener al menos 1 caracter")
+            };            
+        },
+        // readName(){
+        //     return private._name;
+        // },
+        // changeName(newName){
+        //     private._name=newName;
+        // },    
     }
     return public;
 };
-Object.defineProperty(public,"readName",{
-    configurable:false,
-    writable:false
-})
-Object.defineProperty(public,"changeName",{
-    configurable:false,
-    writable:false
-})
+// Object.defineProperty(public,"readName",{
+//     configurable:false,
+//     writable:false
+// })
+// Object.defineProperty(public,"changeName",{
+//     configurable:false,
+//     writable:false
+// })
 
 const juanDC= createStudent({
     name: "Juanito",
     age: 18,
     email: "juanito@frijolitos.com",
     twitter: "fjuandc",
-  }); 
+  });
+  
+  console.log(Object.getOwnPropertyDescriptors(juanDC));
