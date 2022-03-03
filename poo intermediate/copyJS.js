@@ -96,3 +96,40 @@ juan.name='Juanito';
 console.log(Object.isSealed(juan));
 console.log(Object.isFrozen(juan));
 
+//Factory pattern RORO receive object return object
+
+function requiredParam(param){
+    throw new Error(`${param} es obligatorio`);
+}
+
+
+function createStudent({
+    name=requiredParam("Name"),
+    age,
+    email=requiredParam("Email"),
+    twitter,
+    instagram,
+    facebook,
+    approvedCourses=[],
+    lerningpaths=[],
+}={}){
+    return {
+        name,
+        age,
+        email,
+        socialMedia:{
+            twitter,
+            instagram,
+            facebook
+        },
+        approvedCourses,
+        lerningpaths
+    };
+};
+
+const juanDC= createStudent({
+    name: "Juanito",
+    age: 18,
+    email: "juanito@frijolitos.com",
+    twitter: "fjuandc",
+  }); 
