@@ -220,3 +220,13 @@ JSON.stringify () convierte un valor en notación JSON que lo representa:
     - Convierte tipos de datos no soportados en soportados, como infinity y NaN en null
     - Los tipos de datos Date serán parseados como strings, no como Date
     - No es tan rápido y eficiente.
+
+## Recursividad:
+
+LA RECURSIVIDAD es bastante peculiar porque suele funcionar autoejecutando funciones con un ámbito menos al problema padre.
+
+Un caso recursivo: Suele ser una función que es capaz de autoinvocarse. La clave de esta autoinvocación es que los elementos que le pasemos tendrán que ser menores que los del problema padre ya que si no nunca podríamos llegar al caso base.
+
+La recursividad es una técnica muy usada en programación funcional porque nos evita el uso de iteraciones.
+
+[Comparación entre recursividad y loops](https://www.redalyc.org/pdf/4759/475947762020.pdf)
