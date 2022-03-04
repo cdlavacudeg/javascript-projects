@@ -239,3 +239,22 @@ Duck Typing is a type system used in dynamic languages. For example, Python, Per
 The name Duck Typing comes from the phrase:
 
 “If it looks like a duck and quacks like a duck, it’s a duck”
+
+## Links Instance of y new
+
+
+[Object prototypes - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
+
+
+[instanceof - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof)
+
+
+[new operator - What is the 'new' keyword in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript)
+
+
+[The “new” keyword in JavaScript. Explained in simple terms and examples… | by Igor Łuczko | Medium](https://igorluczko.medium.com/the-new-keyword-in-javascript-f448b932eea8)
+
+[Why I don’t use the javascript “new” keyword · Blog · Liip](https://www.liip.ch/en/blog/why-i-dont-use-the-javascript-new-keyword)
+
+
+[Function.prototype.call() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
