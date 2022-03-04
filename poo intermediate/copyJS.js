@@ -102,52 +102,93 @@ function requiredParam(param){
     throw new Error(`${param} es obligatorio`);
 }
 
+function createLearningPath({
+  name = requiredParam("name"),
+  courses = [],
+}) {
+  const private = {
+    "_name": name,
+    "_courses": courses,
+  };
+
+  const public = {
+    get name() {
+      return private["_name"];
+    },
+    set name(newName) {
+      if (newName.length != 0) {
+        private["_name"] = newName;
+      } else {
+        console.warn("Tu nombre debe tener al menos 1 caracter");
+      }
+    },
+    get courses() {
+      return private["_courses"];
+    },
+  };
+
+  return public;
+}
 
 function createStudent({
-    name=requiredParam("Name"),
+  name = requiredParam("name"),
+  email = requiredParam("email"),
+  age,
+  twitter,
+  instagram,
+  facebook,
+  approvedCourses = [],
+  learningPaths = [],
+} = {}) {
+  const private = {
+    "_name": name,
+    "_learningPaths": learningPaths,
+  };
+
+  const public = {
+    email,
     age,
-    email=requiredParam("Email"),
-    twitter,
-    instagram,
-    facebook,
-    approvedCourses=[],
-    lerningpaths=[],
-}={}){
+    approvedCourses,
+    socialMedia: {
+      twitter,
+      instagram,
+      facebook,
+    },
+    get name() {
+      return private["_name"];
+    },
+    set name(newName) {
+      if (newName.length != 0) {
+        private["_name"] = newName;
+      } else {
+        console.warn("Tu nombre debe tener al menos 1 caracter");
+      }
+    },
+    get learningPaths() {
+      return private["_learningPaths"];
+    },
+    set learningPaths(newLP) {
+      if (!newLP.name) {
+        console.warn("Tu LP no tiene la propiedad name");
+        return;
+      }
 
-    const private={
-        "_name":name,
-    };
+      if (!newLP.courses) {
+        console.warn("Tu LP no tiene courses");
+        return;
+      }
 
-    const public={
-        age,
-        email,
-        socialMedia:{
-            twitter,
-            instagram,
-            facebook
-        },
-        approvedCourses,
-        lerningpaths,
+      if (!isArray(newLP.courses)) {
+        console.warn("Tu LP no es una lista (*de cursos)");
+        return;
+      }
+      
+      private["_learningPaths"].push(newLP);
+    },
+  };
 
-        get name(){
-            return private["_name"];
-        },
-        set name(newName){
-            if(newName.length!=0){
-                private["_name"]=newName;
-            }else{
-                console.warn("Tu nombre debe tener al menos 1 caracter")
-            };            
-        },
-        // readName(){
-        //     return private._name;
-        // },
-        // changeName(newName){
-        //     private._name=newName;
-        // },    
-    }
-    return public;
-};
+  return public;
+}
 // Object.defineProperty(public,"readName",{
 //     configurable:false,
 //     writable:false
