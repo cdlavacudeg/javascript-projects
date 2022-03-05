@@ -34,15 +34,15 @@ console.log(lorem2);
 
 // Destructuración
 
-let person={
-    'name':'oscar',
-    'age':32,
-    'country':'MX'
-};
+// let person={
+//     'name':'oscar',
+//     'age':32,
+//     'country':'MX'
+// };
 
-console.log(person.name, person.age);
-let { name,age }=person;
-console.log(name,age);
+// console.log(person.name, person.age);
+// let { name:nombre,age }=person;
+// console.log(nombre,age);
 
 // spread operator
 
@@ -65,3 +65,60 @@ console.log(education);
 
 console.log(globalVar);
 
+// 
+
+let name ='Cristian';
+let age = 22;
+
+obj={
+    name:name,
+    age:age
+};
+// es6
+obj2={
+    name,
+    age
+}
+console.log(obj2);
+
+// Arrow functions
+
+const names=[
+    {name:'Cristian',age:22},
+    {name:'Sebastian',age:20},
+    {name:'Omar',age:50},
+];
+
+let listOfNames=names.map(function (item){
+    console.log(item.name);
+})
+
+let listOfNames2=names.map(item=>console.log(item.name));
+
+const listOfNames3=(name,age,country)=>{
+    // bloque do codigo
+}
+
+const listOfNames4=name=>{
+    // bloque de codigo
+}
+
+const square=num=>num*num;
+console.log(square(5));
+
+// Promises
+
+const helloPromise=()=>{
+    return new Promise((resolve,reject)=>{
+        if(false){
+            resolve('Bien');
+        }else{
+            reject('Algo Salio mal')
+        }
+    });
+};
+
+helloPromise()
+    .then(response=>console.log(`response: ${response}`))
+    .then(()=>console.log('Hola'))
+    .catch(error=>console.log(`error: ${error}`));
