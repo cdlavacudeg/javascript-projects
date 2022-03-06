@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>For each</h1>
+    <div id="app"></div>
+    <h2>Map</h2>
+    <div id="map"></div>
+    <script>
+        const products=[
+            {title:'Burger',price:121},
+            {title:'Pizza',price:20},
+        ];
+
+        const app=document.getElementById('app');
+        products.forEach(product=>{
+            app.innerHTML+=`<li>${product.title}-${product.price}</li>`;
+        });
+
+        const map=document.getElementById('map');
+        const listProducts = products.map(product=>{
+            return `<li>${product.title}-${product.price}</li>`;
+        });
+        map.innerHTML=listProducts.join(' ');
+    </script>
+</body>
+</html>
