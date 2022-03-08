@@ -77,3 +77,37 @@ Representación de un documento de etiquetas HTML, ceardo el navegador recibe es
 
 - DEFER: Deferir la ejecucion hasta el final del procesamiento del HTML.
 
+## Como funciona JavaScript
+[33 Conceptos de JS](https://github.com/leonardomso/33-js-concepts)
+### ¿Qué hace un JS Engine?
+- Recibe código fuente
+- Parsea el código y produce un Abstract Syntax Tree (AST)
+- Se compila a bytecode y se ejecuta
+- Se optimiza a machine code y se reemplaza el código base
+### Bytecode vs Machine Code
+1. Bytecode:
+    - Código parcido a assembly.
+    - Portatil
+    - Ejecutado por una virtual machine
+
+2. Machine Code:
+    - Binario
+    - Instrucciones específicos a una arquitecturo o procesador
+
+## Parser
+Código fuente -> Tokens -> AST
+- SyntaxError
+- budling y code spliting
+
+[Esprima](https://esprima.org/)
+[AST Explorer](https://astexplorer.net/)
+
+### V8 Parser:
+- Eager parsing: Encuentra errores de sintaxis, crea Ast
+- Lazy parsing: Doble de rápido que el eager parser, No crea AST, construye los scopes parcialmente
+
+### Event Loop:
+Lo que hace que javaScript parezco multhilo a pesar de que corre un solo proceso. administra las tareas del task queue al stack ( si este está vacio).
+- Stack y Memory Heap: en el stack ultima que entra primera que sale
+- Queue: Fila, primero que entra primero que sale. Fila de tareas
+- Promises: Micro tareas
