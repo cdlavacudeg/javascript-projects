@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Herencia</title>
+  </head>
+  <body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <h1><code>SomeObject.prototype</code> es un objeto donde definimos el prototipe de las instancias de <code>SomeObject</code>. Es decir, las instancios de <code>SomeObject</code> van a "heredar" de <code>SomeObject.prototype</code>.</h1>
+   
+    <!-- Por default los objetos en JavaScript tienen cómo prototipo a Object que es el punto de partida de todos los objetos, es el prototipo padre. Object es la raíz de todo, por lo tanto tiene un prototipo padre undefined.
+        
+    Cuando se llama a una función o variable que no se encuentra en el mismo objeto que la llamó, se busca en toda la prototype chain hasta encontrarla o regresar undefined.
+    
+    La función hasOwnProperty sirve para verificar si una propiedad es parte del objeto o si viene heredada desde su prototype chain. -->
+    <script>
+        
+        function Hero(name){
+            this.name=name;
+        }
+        Hero.prototype.saludar=function(){
+                console.log(`Me llamo ${this.name}`);
+        }
+        const zelda=new Hero("Zelda");
+        // Propiedades de la instancia
+        console.log('Name: ',zelda.name);
+        // Propiedades de la clase
+        console.log('Saludar: ',zelda.saludar);
+        // propiedades heredadas ej:toString
+        console.log('toString: ',zelda.toString);
+
+        // hasOwnProperty
+        console.log('zelda.hasOwnProperty(name): ',zelda.hasOwnProperty('name'));
+        console.log('zelda.hasOwnProperty(saludar): ',zelda.hasOwnProperty('saludar'));
+
+
+
+
+    </script>
+  </body>
+</html>
