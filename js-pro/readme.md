@@ -53,7 +53,7 @@ Esto quiere decir que tenemos que leer mucho código, un lugar hermoso para pone
 
 No vamos a reinventar la rueda, hay muchas personas que ya han solucionado los problemas más comunes, tenemos que usar estas soluciones, a estas soluciones se les llama: patrones de diseño.
 
-## Ética
+### Ética
 ‌
 Esta es la parte más importante de ser un profesional. Un buen profesional cumple con los siguientes valores:
 
@@ -62,7 +62,18 @@ Esta es la parte más importante de ser un profesional. Un buen profesional cump
 - Sabe decir que no.
 - No hace daño.
 
-## Experiencia
+### Experiencia
 ‌
 La experiencia no es algo que se pueda enseñar, tenemos que encontrarla nosotros mismos en el camino a ser profesionales. Todo está en nosotros, tenemos que estudiar y practicar mucho.
+
+
+## DOM
+
+Representación de un documento de etiquetas HTML, ceardo el navegador recibe este archivo la tiene que convertir en una estructura parecido a un arbol.Cuando el navegador termina de convertirlo se genera el evento DOMContentLoaded.
+
+### Atributo ASYNC y DEFER
+
+- ASYNC: Scripts externos, script feching asincrona y no detiene procesamiento del DOM hasta que se reciban los datos y sea necesaria la ejecución
+
+- DEFER: Deferir la ejecucion hasta el final del procesamiento del HTML.
 
