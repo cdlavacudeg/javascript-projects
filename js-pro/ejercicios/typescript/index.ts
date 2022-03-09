@@ -1,10 +1,4 @@
-console.log('Hello, TypeScript');
 
-function add (a:number,b:number){
-    return a+b;
-}
-const sum=add(2,4);
-console.log(sum);
 
 // Tipos de datos
 
@@ -49,3 +43,30 @@ comodin ={type:'Wildcar'};
 // Object
 let someObject: object={type:'Wildcar'}
 
+
+/*-----------------*/
+// Funciones       //
+/*-----------------*/
+
+console.log('TypeScript Funciones');
+
+function add (a:number,b:number): number{
+    return a+b;
+}
+const sum=add(4,5);
+console.log(sum);
+
+// Retorno de otras funciones
+function createAdder(a:number): (number)=>number{
+    return function(b:number){
+        return b+a;
+    }
+}
+const addFour=createAdder(4);
+const fourPlus6=addFour(6);
+
+function fullName(firstName: string, lastName?: string): string{//? puede ser undefined o string
+    return `${firstName} ${lastName}`;
+}
+
+const richard=fullName('Richard');
