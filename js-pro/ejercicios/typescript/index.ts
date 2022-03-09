@@ -70,3 +70,36 @@ function fullName(firstName: string, lastName?: string): string{//? puede ser un
 }
 
 const richard=fullName('Richard');
+
+/*-----------------*/
+// Interfaces   //
+/*-----------------*/
+// Nos permiten declarar la forma que tiene un objeto. Esto es útil porque nos ayuda en el auto completado
+// y para evitar cometer algunos errores.
+
+
+interface Rectangulo{
+    ancho: number,
+    alto: number
+    color?:Color//opcional
+}
+
+let rect: Rectangulo={
+    ancho:4,
+    alto:6,
+    color:Color.Rojo,
+}
+
+function area(r: Rectangulo){
+    return r.alto * r.ancho;
+}
+
+const areaRect=area(rect);
+console.log(areaRect);
+
+
+rect.toString=function(){
+    return this.color? `Un rectangulo ${this.color}`:`Un rectangulo sin color`;
+}
+
+console.log(rect.toString());
