@@ -152,3 +152,14 @@ La API de Visibilidad de Pagina ofrece eventos que puedes escuchar para saber cu
 - Una página quiere detectar cuando se está precargando para poder mantener un recuento preciso de las vistas de página.
  
 - Un sitio desea desactivar los sonidos cuando el dispositivo está en modo de espera (el usuario presiona el botón de encendido para apagar la pantalla).
+
+# TypeScript
+Es unn lenguaje de programacíon de código abierto desarrollado y mantenido por Microsoft.Es un superset de JavaScript, añade tipos a nuestras variables y objetos basados en clases. Afudando así a la detección de errores de forma temprano y mejorando el autocompletado.En typeScript, admitimos las mismos tipos de dates que esperaría en JavaScript, con un tipo de enumeración conveniente para ayudar a las cosas.
+
+### Que es un super set?
+Es un lenguaje escrito encima de otro lenguaje o mejor dicho, que compila a otro lenguajo. En el caso de TypeScript es un lenguaje que compilo a javaScripe, pero que inclupe muchas facilidades y ventajas
+
+## Parcel
+Parar lograr trabajar con TypeScript necesitamos instalar un diferente tipo de servidor; live-server no es capaz de transpilar código typeScript a javaScript. para eso se emplea parcel.
+`npm install -D parcel-bundler`
+Tambien es posible compilar TypeScript en JavaScript y ejecutar 
