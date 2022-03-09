@@ -111,3 +111,18 @@ Lo que hace que javaScript parezco multhilo a pesar de que corre un solo proceso
 - Stack y Memory Heap: en el stack ultima que entra primera que sale
 - Queue: Fila, primero que entra primero que sale. Fila de tareas
 - Promises: Micro tareas
+
+## Proxy:
+Igual que las gettors y setters el proxy es uno dol als features más recientes del Igual que los getters y setters el proxy es uno de los features más recientes del lenguaje.
+
+El objeto Proxy se usa para definir un comportamiento personalizado para operaciones fundamentales
+por ejemplo, para observar propiedades, cuando se asignan, invocación de funciones, etc.
+
+`new Proxy(target, handler)`
+
+Básicamente, antes de que la llamada llegue al objeto original (target) podemos manipularla con una lógica que nosotros definamos.
+- Target:Target es mi objeto a supervisar. Puede ser cualquier objeto, array,función o incluso otro proxy
+- Traps:Son los métodos interceptores que proveen acceso a las propiedades.Todas las trampas son opcionales. Si no se ha definido una trampa, el comportamiento predeterminado es reenviar la operación al target.
+- Handler: es un objeto con funciones (trampa) que definen el comportamiento del proxy cuando una operación es realizada en él.
+
+Cualquier operación que hagas en el proxy se enviara al objeto original.
