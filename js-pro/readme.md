@@ -142,3 +142,13 @@ Su contexto (el valor de las variables, parámetros y funciones) será conservad
 Sirve para observar elementos de forma asíncrona.Si este elemento que estamos observando cruza un umbral (la intersección del elemento con un elemento ancestro o con el viewport) que nosotros definamos nos lo va notificar para tomar alguna acción.
 
 - viewport:En términos de navegadores web, se refiere a la parte del documento que usted está viendo, la cual es actualmente visible en su ventana.El contenido fuera del viewport no es visible en la pantalla hasta que sea desplazado dentro de él.
+
+## DOM API Page Visibility:
+La API de Visibilidad de Pagina ofrece eventos que puedes escuchar para saber cuando un documento se convierte en visible o en oculto.Cuando el usuario minimiza la ventana o cambia a otra persaña, la API manda un evento de visibilitychange,esta puede ser una herramienta interesante tambien en los siguientes casos:
+- Un sitio tiene un carrusel de imágenes que no debería avanzar a la siguiente diapositiva a no ser que el usuario esté viendo la página.
+ 
+- Una aplicación que muestra un panel de información y no se quiere que se actualice la información del servidor cuando la página no está visible.
+ 
+- Una página quiere detectar cuando se está precargando para poder mantener un recuento preciso de las vistas de página.
+ 
+- Un sitio desea desactivar los sonidos cuando el dispositivo está en modo de espera (el usuario presiona el botón de encendido para apagar la pantalla).
