@@ -126,3 +126,13 @@ Básicamente, antes de que la llamada llegue al objeto original (target) podemos
 - Handler: es un objeto con funciones (trampa) que definen el comportamiento del proxy cuando una operación es realizada en él.
 
 Cualquier operación que hagas en el proxy se enviara al objeto original.
+
+## Generators
+
+Los generadores son funciones especiales, pueden pausar su ejecución y luego volver al punto donde se quedaron.
+Su contexto (el valor de las variables, parámetros y funciones) será conservado o recordado al momento de retornar la ejecución de la función con .next
+
+### Caracteristicas:
+- Empiezan suspendidos y se tiene que llamar next para que se ejecuten
+- Regresan un value y un boolean que nos indica si ya se acabo o no la ejecución del generador.
+- yield es la instrucción que regresa un valor cada vez que llamamos a next y detiene la ejecución del generador.
