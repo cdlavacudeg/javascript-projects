@@ -1,5 +1,5 @@
 # Curso profesional de JavaScript
-
+[Notas](https://github.com/JasanHdz/javascript-professional/tree/master/notes)
 ## ¿Qué significa ser un profesional de JavaScript?
 ‌
 El camino para llegar a ser profesional es largo y duro, no es fácil. Todos necesitamos que nos guíen para saber qué hacer y qué no. Este camino es conocido como la ruta de pasar de Junior a Senior, este es un duro camino lleno de experiencia.
@@ -136,3 +136,9 @@ Su contexto (el valor de las variables, parámetros y funciones) será conservad
 - Empiezan suspendidos y se tiene que llamar next para que se ejecuten
 - Regresan un value y un boolean que nos indica si ya se acabo o no la ejecución del generador.
 - yield es la instrucción que regresa un valor cada vez que llamamos a next y detiene la ejecución del generador.
+
+## DOM API IntersectionObserver
+
+Sirve para observar elementos de forma asíncrona.Si este elemento que estamos observando cruza un umbral (la intersección del elemento con un elemento ancestro o con el viewport) que nosotros definamos nos lo va notificar para tomar alguna acción.
+
+- viewport:En términos de navegadores web, se refiere a la parte del documento que usted está viendo, la cual es actualmente visible en su ventana.El contenido fuera del viewport no es visible en la pantalla hasta que sea desplazado dentro de él.
