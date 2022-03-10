@@ -102,6 +102,8 @@ select {
 .container {
   display: grid;
   gap: 0.5rem;
+  max-width: 600px;
+  min-height: 450px;
   grid-template-rows: repeat(7, 1fr);
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "display-f display-f display-f display-f" "display display display display" "clear   clear   divide  multiply" "seven   eigth nine substract" "four five six add" "one two three equals" "zero zero decimal equals";
@@ -116,17 +118,22 @@ select {
   background-color: black;
   color: #ffff;
   width: 100%;
-  height: 50px;
+  height: auto;
   align-items: center;
   justify-content: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 #formula-display {
   grid-area: display-f;
+  color: orange;
+  font-size: 2.4rem;
 }
 
 #output-display {
   grid-area: display;
+  font-size: 2rem;
 }
 
 #zero {
@@ -210,7 +217,7 @@ select {
 .button {
   border: none;
   padding: 0;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   border-radius: 15%;
 }
 
