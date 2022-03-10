@@ -106,13 +106,13 @@ select {
   min-height: 450px;
   grid-template-rows: repeat(7, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "display-f display-f display-f display-f" "display display display display" "clear   clear   divide  multiply" "seven   eigth nine substract" "four five six add" "one two three equals" "zero zero decimal equals";
+  grid-template-areas: "display-f display-f display-f display-f" "display display display display" "clear   clear   divide  multiply" "seven   eight nine subtract" "four five six add" "one two three equals" "zero zero decimal equals";
 }
 
 /* ----------------- */
 /* Custom classes   */
 /* ------------------*/
-.display {
+.display-container {
   display: flex;
   margin: 0 auto;
   background-color: black;
@@ -123,6 +123,7 @@ select {
   justify-content: flex-end;
   word-wrap: break-word;
   word-break: break-all;
+  padding: 0 10px;
 }
 
 #formula-display {
@@ -131,7 +132,7 @@ select {
   font-size: 2.4rem;
 }
 
-#output-display {
+#display {
   grid-area: display;
   font-size: 2rem;
 }
@@ -168,8 +169,8 @@ select {
   grid-area: seven;
 }
 
-#eigth {
-  grid-area: eigth;
+#eight {
+  grid-area: eight;
 }
 
 #nine {
@@ -184,8 +185,8 @@ select {
   grid-area: multiply;
 }
 
-#substract {
-  grid-area: substract;
+#subtract {
+  grid-area: subtract;
 }
 
 #add {

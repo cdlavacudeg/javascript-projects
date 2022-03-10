@@ -106,7 +106,7 @@ select{
         'display-f display-f display-f display-f'
         'display display display display'
         'clear   clear   divide  multiply'
-        'seven   eigth nine substract'
+        'seven   eight nine subtract'
         'four five six add'
         'one two three equals'
         'zero zero decimal equals';
@@ -115,7 +115,7 @@ select{
 /* ----------------- */
 /* Custom classes   */
 /* ------------------*/
-.display{
+.display-container{
     display: flex;
     margin: 0 auto;
     background-color: black;
@@ -126,19 +126,20 @@ select{
     justify-content: flex-end;
     word-wrap: break-word;
     word-break: break-all;
+    padding: 0 10px;
 }
 #formula-display{
     grid-area: display-f;
     color:orange;
     font-size: 2.4rem;
 }
-#output-display{
+#display{
     grid-area: display;
     font-size: 2rem;
 }
 
 
-$numbers: zero,one,two,three,four,five,six,seven,eigth,nine,divide,multiply,substract,add,decimal,clear,equals;
+$numbers: zero,one,two,three,four,five,six,seven,eight,nine,divide,multiply,subtract,add,decimal,clear,equals;
 
 @each $item in $numbers {
   ##{$item} {
