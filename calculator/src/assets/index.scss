@@ -1,0 +1,167 @@
+// sass --no-source-map -w index.scss index.css
+/* ---------------   */
+/* Custom Properties */
+/* -------------
+
+
+
+/* --------------- */
+/* Reset           */
+/* --------------  */
+/* https://piccalil.li/blog/a-modern-css-reset/ *
+/*Box sizing*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+/* Reset Margins*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture{
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ font-weight: 400;
+}
+/* set up the body */
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.6rem;
+    background-color: rgb(211, 211, 211);
+    color:black;
+    line-height: 1.5;
+    min-height: 100vh;
+    min-width: 320px;
+    display: grid;
+    overflow-x: hidden;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+/* make images easier to work with */
+img,
+picture{
+    max-width: 100%;
+}
+/* make forms easier to work with */
+input,
+button,
+textarea,
+select{
+    font:inherit
+}
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+}
+
+/* ----------------- */
+/* Utility classes   */
+/* ------------------*/
+ /* general */
+ .flex{
+    display: flex;
+    gap: var(--gap, 1.6rem);
+}
+
+.grid{
+    display: grid;
+    gap: var(--gap, 1.6rem);
+}
+.container{
+    display: grid;
+    gap: 0.5rem;
+    grid-template-rows: repeat(7,1fr);
+    grid-template-columns:repeat(4,1fr) ;
+    grid-template-areas: 
+        'display-f display-f display-f display-f'
+        'display display display display'
+        'clear   clear   divide  multiply'
+        'seven   eigth nine substract'
+        'four five six add'
+        'one two three equals'
+        'zero zero decimal equals';
+}
+
+/* ----------------- */
+/* Custom classes   */
+/* ------------------*/
+.display{
+    display: flex;
+    margin: 0 auto;
+    background-color: black;
+    color: #ffff;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: flex-end;
+}
+#formula-display{
+    grid-area: display-f;
+}
+#output-display{
+    grid-area: display;
+}
+
+
+$numbers: zero,one,two,three,four,five,six,seven,eigth,nine,divide,multiply,substract,add,decimal,clear,equals;
+
+@each $item in $numbers {
+  ##{$item} {
+    grid-area:#{$item};
+  }
+}
+#clear{
+    background-color: rgb(110, 28, 28);
+    color:white;
+}
+#equals{
+    background-color: rgb(64, 106, 160);
+    color:white;
+}
+.button{
+    border: none;
+    padding: 0;
+    font-size: 1.8rem;
+    border-radius: 15%;
+}
+button:hover{
+    cursor: pointer;
+}
+
+.button-number{
+    background-color: gray;
+    color: white
+}
+
+.button-operation{
+    background-color: darkgray;
+    color: white;
+}
