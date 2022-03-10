@@ -162,4 +162,74 @@ Es un lenguaje escrito encima de otro lenguaje o mejor dicho, que compila a otro
 ## Parcel
 Parar lograr trabajar con TypeScript necesitamos instalar un diferente tipo de servidor; live-server no es capaz de transpilar código typeScript a javaScript. para eso se emplea parcel.
 `npm install -D parcel-bundler`
-Tambien es posible compilar TypeScript en JavaScript y ejecutar 
+Tambien es posible compilar TypeScript en JavaScript y ejecutar
+
+# Patron de diseño
+
+Los patrones de diseño son unas técnicas para resolver problemas comunes en el desarrollo de software y otros ámbitos referentes al diseño de interacción o interfaces.
+
+Un patrón de diseño resulta ser una solución a un problema de diseño. Para que una solución sea considerada un patrón debe poseer ciertas características. Una de ellas es que debe haber comprobado su efectividad resolviendo problemas similares en ocasiones anteriores. Otra es que debe ser reutilizable, lo que significa que es aplicable a diferentes problemas de diseño en distintas circunstancias.1
+
+## Objetivos de los patrones de diseño
+
+- Proporcionar catálogos de elementos reusables en el diseño de sistemas software.
+- Evitar la reiteración en la búsqueda de soluciones a problemas ya conocidos y solucionados anteriormente.
+- Formalizar un vocabulario común entre diseñadores.
+- Estandarizar el modo en que se realiza el diseño.
+- Facilitar el aprendizaje de las nuevas generaciones de diseñadores condensando conocimiento ya existente.
+
+## Asimismo, no pretenden:
+
+- Imponer ciertas alternativas de diseño frente a otras.
+- Eliminar la creatividad inherente al proceso de diseño.
+- No es obligatorio utilizar los patrones, solo es aconsejable en el caso de tener el mismo problema o similar que soluciona el patrón, siempre teniendo en cuenta que en un caso particular puede no ser aplicable. “Abusar o forzar el uso de los patrones puede ser un error”.
+
+## Crítica
+- Los patrones de diseño son una forma de complejidad
+- Son soluciones a las limitaciones de un lenguaje de programación
+- "Cuando lo que tienes es un martillo, todo te parece un clavo."
+
+## Categorías de patrones de diseño:
+Builder: 
+### Creacionales
+Proveen diferentes mecanismos para crear objetos:
+- Abstract Factory
+- Builder:es usado para permitir la creación de una variedad de objetos complejos desde un objeto fuente.Separa la creación de un objeto complejo de su estructura, de tal forma que el mismo procesa de construcción puede servir para crear representaciones diferentes.(EJ: jquery);
+- Factory Method
+- Prototype
+- Singleton: Es un patrón que te asegura que una clase salo tiene una instanca.Esta única instancia puede ser consumida por cualquier otro objeto.
+ 
+### Estructurales
+Describen formas de componer objetos para formar nuevas estructuras flexibles y eficientes:
+- Adapter
+- Bridge
+- Composite
+- Decorator:El patrón Decorator responde a la necesidad de añadir dinámicamente funcionalidad a un Objeto. Esto nos permite no tener que crear sucesivas clases que hereden de la primera incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.
+"Una entidad de software(clase,módulo, función, etc.) debe quedar abierta para su extensión, pero cerrada para su modificación"
+- Facade
+- Flyweight
+- Proxy
+ 
+### Comportamiento
+Gestionan algoritmos y responsabilidades entre objetos.
+- Chain of Responsibility
+- Command
+- Interpreter
+- Iterator
+- Mediator
+- Memento
+- Observer:Observador (en inglés: Observer) es un patrón de diseño de software que define una dependencia del tipo uno a muchos entre objetos, de manera que cuando uno de los objetos cambia su estado, notifica este cambio a todos los dependientes. Se trata de un patrón de comportamiento (existen de tres tipos: creación, estructurales y de comportamiento), por lo que está relacionado con algoritmos de funcionamiento y asignación de responsabilidades a clases y objetos.(ej:REDUX)
+- State
+- Strategy
+- Template Method
+- Visitor
+
+## Links:
+- Paginas:
+[Layout](https://every-layout.dev/)
+[Media queries](https://mediaqueri.es/)
+Libros
+[Patrones de diseño](http://www.uml.org.cn/c++/pdf/DesignPatterns.pdf)
+[Alexander a pattern Language](https://arl.human.cornell.edu/linkeddocs/Alexander_A_Pattern_Language.pdf)
+[Timeless Way](http://library.uniteddiversity.coop/Ecological_Building/The_Timeless_Way_of_Building_Complete.pdf)
+[Patrones de diseño Blog](https://refactoring.guru/es/design-patterns)
