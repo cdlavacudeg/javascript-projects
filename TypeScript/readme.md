@@ -71,3 +71,22 @@ inicializar el archivo tsconfig.json ejecutar `tsc --init`.
 `tsc`-> Busca la configuración
 `tsc --project platzi`-> Especifica un directorio que contiene la configuración
 `tsc file.ts`->Omite la configuración
+
+## Tipado en TypeScirpt
+- Explícito: Define una sintaxis para la creación de variables con tipo de dato `variable: tipo = valor`.
+- Inferido: TypeScirpt tiene la habilidad de "deducir' el tipo de función de un valor.`
+
+### [Tipos Básicos](https://www.youtube.com/watch?v=cC65D2q5f8I)
+- Primitivos: Number Boolean String Array Tuple Enum Any Void Null Undefined Never Object
+
+#### Number:
+- Valores numéricos
+- Valores hexadecimales
+- Valores binarios
+- Valores hexadecimales
+#### Bolean:
+Tipo de dato más simple `true, false`
+
+#### String
+- Datos textuales o cadenas '' ""
+- Template String: Múltiples lineas de texto, contener expresiones o variables embebidas `` y ${expr}
