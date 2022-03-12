@@ -186,3 +186,20 @@ var Country;
 })(Country || (Country = {}));
 const country = Country.Colombia;
 console.log('Country', country);
+let idUsers;
+idUsers = 10;
+idUsers = '10';
+// Buscar username dado un ID
+function getUsernameById(id) {
+    // logica do negocio, find the user
+    return 'Cristian';
+}
+// let smallPicture:SqueareSize='200x200';//Error
+let smallPicture = '100x100';
+let mediumPicture = '500x500';
+// Asersiones de tipo
+// <>// Angle bracket syntax
+let usernameA;
+usernameA = 'danijazzero'.toUpperCase();
+///as: variable as type
+usernameA = username.toLowerCase();

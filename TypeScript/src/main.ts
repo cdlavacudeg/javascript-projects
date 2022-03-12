@@ -230,3 +230,42 @@ enum Country{
 
 const country: Country=Country.Colombia;
 console.log('Country',country);
+
+// Union de tipos
+// 10,'10
+// let idUsers: number|string;
+// idUsers=10;
+// idUsers='10';
+
+// // Buscar username dado un ID
+// function getUsernameById(id:number|string){
+//     // logica do negocio, find the user
+//     return 'Cristian';
+// }
+
+// Alias de tipos
+type IDUser=number|string;
+let idUsers: IDUser;
+idUsers=10;
+idUsers='10';
+
+// Buscar username dado un ID
+function getUsernameById(id:IDUser){
+    // logica do negocio, find the user
+    return 'Cristian';
+}
+
+// Tipos literales
+// 100x100, 500x500, 1000x1000
+type SqueareSize='100x100'|'500x500'|'1000x1000';
+// let smallPicture:SqueareSize='200x200';//Error
+let smallPicture:SqueareSize='100x100';
+let mediumPicture:SqueareSize='500x500';
+
+
+// Asersiones de tipo
+// <>// Angle bracket syntax
+let usernameA : any;
+usernameA = (<string>'danijazzero').toUpperCase()
+///as: variable as type
+usernameA = (username as string).toLowerCase() 

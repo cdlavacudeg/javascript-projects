@@ -124,5 +124,19 @@ Generará un reporte de los errores que encuentre, hacemos `tsc nombreDelArchivo
 - Las tuplas permiten expresar un arreglo con un número fijo de elementos
 - Los tipos de datos son conocidos
 
-### Enum
+#### Enum
 Los enumerados permite definer un conjunto de constantes con nombre, tienen la ventaja de adaptarse al contexto do la aplicación.
+
+### Unión de Tipos, Alias y Tipos Literales
+
+#### Unión de Tipos
+En TypeScript se puede definor una variable con múltiplos tipos de datos: Union Type, se usa el símbolo de pipe ('|') entre los tipos
+
+#### Alias de tipos
+TypeScript permite croar un alias como nuevo nombre para un tipo, el alias se puedo aplicar tambión a un cojunto o combinación de tipos,se usa la palabra reservada `type`.
+#### Tipos literales
+- Una variable con un tipo literal puede contener únicamente una cadena del conjunto
+- Se usan cadenas como "tipos", combinados con el símbolo de pipe ('|') entre ellos.
+
+### Aserciones de tipos
+Cuando el programador puede conocer má que TypeScirpt sobre el valor de una variable.Se parece al casting de tipos en otros lengajos du programación. `<Angle Bracket> y (variable as tipo)`.
