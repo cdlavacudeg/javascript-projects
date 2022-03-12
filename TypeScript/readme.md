@@ -111,3 +111,15 @@ En TypeScript, ambos “valores” tienen sus respectivos tipos null y undefined
 
 - `Opción --strictNullChecks`:Solo permite asignar null y undefined a una variable de tipo any o a sus respectivos. Ayua a evitar errores comunes en programación de apps en el ámbito JavaScript
 Generará un reporte de los errores que encuentre, hacemos `tsc nombreDelArchivo.ts --strictNullChecks`.
+
+#### object vs Object
+- object: Es el tipo de dato que representa un valor no pimitivo. No se puede acceder a las propiedades del objeto.
+- Object: instancia de la clase Object de JavaScript
+
+#### Array
+- Al igual que JavaScript, TypeScirpt permite definer un areglo para contener un conjunto de valores
+- Usa dos notaciones: `[] y Array<tipo>`
+
+#### Tuple
+- Las tuplas permiten expresar un arreglo con un número fijo de elementos
+- Los tipos de datos son conocidos

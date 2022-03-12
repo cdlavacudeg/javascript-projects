@@ -105,3 +105,56 @@ otherUndefined = 'test';
 let albumName;
 // albumName=null;
 // albumName=undefined;
+// type: object
+let user;
+user = {}; //Object
+user = {
+    id: 1,
+    username: 'crislav',
+    firstName: 'David',
+    isPro: true
+};
+console.log('user', user);
+// console.log('user.username',user.username);// Error por el tipo object
+// Tipo; Object
+const myObj = {
+    id: 1,
+    username: 'crislav',
+    firstName: 'David',
+    isPro: true
+};
+const isInstance = myObj instanceof Object; // clase Object JavaScript
+console.log('user.username', myObj.username);
+// Tipo: Array
+// corchetes []
+// Explicito
+let userArray;
+let myArray;
+userArray = ['kimbara', 'crislav', 'sebaslav'];
+// userArray=[1,true,'test'];//Error
+// Tipo Inferido
+let otherUserArray = ['kimbara', 'crislav', 'sebaslav'];
+// Array<tipo>
+let pictureTitles;
+pictureTitles = ['Sunrise', 'Landscape'];
+// Accediendo a los valores Array
+console.log('first user', userArray[0]);
+console.log('first title', pictureTitles[0]);
+// Propiedades en Array
+console.log(userArray.length);
+// Tuplas
+let userNumberId;
+userNumberId = [1, 'luixaviles'];
+console.log(userNumberId);
+console.log('usernama', userNumberId[1]);
+// Tuplas con varios valores
+// id,username,isPro
+let userInfoTuple;
+userInfoTuple = [2, 'cristian', true];
+console.log(userInfoTuple);
+// Arreglo de tuplas
+let array = [];
+array.push([1, 'Cristian']);
+array.push([2, 'Sebas']);
+// array.push([1,1]);//error
+console.log(array);
