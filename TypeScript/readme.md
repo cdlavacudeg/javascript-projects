@@ -90,3 +90,24 @@ Tipo de dato más simple `true, false`
 #### String
 - Datos textuales o cadenas '' ""
 - Template String: Múltiples lineas de texto, contener expresiones o variables embebidas `` y ${expr}
+
+### Any
+No se recomienda su uso, puede generar errores indeseados. Solo usar como ultima opcion.
+- Usado para capturar valores dinámicos
+- Los valores pueden cambior de tipo en el tiempo: APIs externas, Librerías de terceros
+
+### Void
+- es la opuesto de any: representa la ausencia de tipo
+- comúnmente se usa como tipo de retorno en funciones.
+
+
+### Never
+Representa el tipo de valor que nunco ocurre
+- Funciones que lanzan excepciones
+- Funciones que nunca retornan un valor
+
+#### Null y Undefined
+En TypeScript, ambos “valores” tienen sus respectivos tipos null y undefined.Además,Null y Undefined se pueden asumir como subtipos de los otros tipos de datos.Significa que se pueden asignar null y undefied a una variable de tipo string, por ejemplo.
+
+- `Opción --strictNullChecks`:Solo permite asignar null y undefined a una variable de tipo any o a sus respectivos. Ayua a evitar errores comunes en programación de apps en el ámbito JavaScript
+Generará un reporte de los errores que encuentre, hacemos `tsc nombreDelArchivo.ts --strictNullChecks`.
