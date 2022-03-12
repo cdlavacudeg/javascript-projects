@@ -158,3 +158,31 @@ array.push([1, 'Cristian']);
 array.push([2, 'Sebas']);
 // array.push([1,1]);//error
 console.log(array);
+// Enum
+// Orientación para Fotografias
+var PhotoOrientation;
+(function (PhotoOrientation) {
+    PhotoOrientation[PhotoOrientation["Landscape"] = 0] = "Landscape";
+    PhotoOrientation[PhotoOrientation["Portrait"] = 1] = "Portrait";
+    PhotoOrientation[PhotoOrientation["Square"] = 2] = "Square";
+    PhotoOrientation[PhotoOrientation["Panorama"] = 3] = "Panorama"; //3
+})(PhotoOrientation || (PhotoOrientation = {}));
+const lanscape = PhotoOrientation.Landscape;
+console.log(lanscape);
+console.log(PhotoOrientation[lanscape]);
+var PictureOrientation;
+(function (PictureOrientation) {
+    PictureOrientation[PictureOrientation["Landscape"] = 10] = "Landscape";
+    PictureOrientation[PictureOrientation["Portrait"] = 11] = "Portrait";
+    PictureOrientation[PictureOrientation["Square"] = 12] = "Square";
+    PictureOrientation[PictureOrientation["Panorama"] = 13] = "Panorama"; //13
+})(PictureOrientation || (PictureOrientation = {}));
+console.log('portrait', PictureOrientation.Portrait);
+var Country;
+(function (Country) {
+    Country["Bolivia"] = "bol";
+    Country["Colombia"] = "col";
+    Country["Mexico"] = "mx";
+})(Country || (Country = {}));
+const country = Country.Colombia;
+console.log('Country', country);

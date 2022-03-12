@@ -199,3 +199,34 @@ array.push([1,'Cristian']);
 array.push([2,'Sebas']);
 // array.push([1,1]);//error
 console.log(array);
+
+// Enum
+// Orientación para Fotografias
+
+enum PhotoOrientation{
+    Landscape = 0,//0
+    Portrait = 1,//1
+    Square = 2,//2
+    Panorama = 3//3
+}
+
+const lanscape: PhotoOrientation=PhotoOrientation.Landscape;
+console.log(lanscape);
+console.log(PhotoOrientation[lanscape]);
+
+enum PictureOrientation{
+    Landscape = 10,
+    Portrait,//11
+    Square,//12
+    Panorama//13
+}
+console.log('portrait',PictureOrientation.Portrait);
+
+enum Country{
+    Bolivia='bol',
+    Colombia='col',
+    Mexico='mx'
+}
+
+const country: Country=Country.Colombia;
+console.log('Country',country);

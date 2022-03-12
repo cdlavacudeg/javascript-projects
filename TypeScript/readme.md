@@ -123,3 +123,6 @@ Generará un reporte de los errores que encuentre, hacemos `tsc nombreDelArchivo
 #### Tuple
 - Las tuplas permiten expresar un arreglo con un número fijo de elementos
 - Los tipos de datos son conocidos
+
+### Enum
+Los enumerados permite definer un conjunto de constantes con nombre, tienen la ventaja de adaptarse al contexto do la aplicación.
