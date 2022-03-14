@@ -140,3 +140,70 @@ TypeScript permite croar un alias como nuevo nombre para un tipo, el alias se pu
 
 ### Aserciones de tipos
 Cuando el programador puede conocer má que TypeScirpt sobre el valor de una variable.Se parece al casting de tipos en otros lengajos du programación. `<Angle Bracket> y (variable as tipo)`.
+
+## Interfaces de TypeScript
+
+Las interfaces en TypeScript constituyen una forma poderosa de definer "contratos" tanto para un proyecto, comopara el código externo del mismo.
+
+Una interfaz (En TypeScript) es un tipo (como string, boolean, number, etc) mas “complejo”, en el cual defines (como enun contrato) las propiedades y metodos que se deben cumplir de cualquier objeto que lo instancie.
+
+La diferencia entre una interfaz y una clase es que en la interfaz solo hacemos mencion de que esperamos de un objeto, en una clase mencionamos las propiedades (igual que una interfaz) pero definimos los metodos (osea, especificamos que hara ese metodo, en la interfaz solo mencionamos el nombre de la funcion).
+
+```typescript
+
+interface Picture{//Contrato o molde del objeto
+    title:string,
+    date:string,
+    orientation: PhotoOrientation
+}
+function showPicture(picture:Picture){
+    console.log(`[title:${picture.title},
+                 date:${picture.date},
+                 orientation:${picture.orientation}]`);
+}
+
+```
+### Propiedades opcionales
+Establecemos una propiedad como opcional con el símbolo (?) después del nombre.
+```typescript
+interface PictureConfig{
+    title?:string,
+    date?:string,
+    orientation?: PhotoOrientation
+}
+
+function generatePicture(config:PictureConfig){
+    const pic={title:'Default',date:'2020-03'};
+    if (config.title){
+        pic.title=config.title;
+    }
+    if (config.date){
+        pic.date=config.date;
+    }
+    return pic;
+}
+```
+### Propiedades de solo lectura
+Algunas propiedades de la interfaz podrían no ser modificables una vez creado el objeto.
+Esto es posible usando `readonly` antes del nombre de la propiedad.
+
+```typescript
+interface User{
+    readonly id:number;
+    username: string;
+    isPro:boolean;
+}
+```
+### Extendiendo interfaces
+Las interfaces pueden extenderse unas de otras. Esto permite copiar las miembros fa definedos en una interfaz a otra, ganando flexibilidad y reusabilidad de componentes.
+```typescript
+interface Entity{
+    id:number,
+    title:string,
+}
+
+interface Album extends Entity{
+    // Copia atributos de Entity
+    description:string;
+};
+```
