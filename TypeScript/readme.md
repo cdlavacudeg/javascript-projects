@@ -360,3 +360,70 @@ Al igual que las interfaces, podemos usar la palabra reservada `readonly` para m
 ## Módulas en TypeScript
 Los módulos en TypeScript proveen un mecanismo para una mejor organización del código y promueven su reutilización. Los miembros de módulo interactúan con el uso de las palabros reservadas `import` y `export`.
 A partir de ECMAScript 2015,los módulos son parte nativa del lenguaje JavaScript.
+
+## Principios de responsabilidad única
+
+Idealmente un archivo deberia tener un proposito o responsabilidad unica: definir una clase, una interfaz, un enumerado, etc.
+Esto mejora la legibilidad de codigo, facilita la lectura, testing y favorece su mantenimiento.
+
+Utilizamos archivos separados y la utilizacion de import, export para lograr un poco mas de mantenibiilidad. Podemos usar tambien carpetas para separar nuestros archivos.
+
+Para observar una carpeta entera usamos:
+
+`tsc --project myFolder --watch`
+
+## Resolviendo Módulos
+TypeScript resuelve la ubicación de módulos observando referencias relativas y no relativas.Posteriormente intenta localizar el módulo usando una estrategia de resolución de módulos.
+
+```
+tsc --moduleResoluton node
+tsc --moduleResolution classics
+```
+- classic: Módulos AMD, System, ES2015, poco configurable
+- node: Módulos Common JS o UMD, más opciones de configración
+
+```json
+"module":"<valor>"(tsconfig.json)
+"moduleResolution": "node|classic"
+"traceResolution":true
+```
+
+Tambien existen los path alias para que no tengamos que lidiar con esa mano de puntos y slash en nuestros proyectos.Esta configuración la pueden poner en el ts.config.json dentro de compilerOptions y así pueden acceder al shortcut @item para llegar a esa carpeta en específico que están buscando.
+Para el ejemplo yo tengo una carpeta item y dentro el archivo index.ts.
+
+```json
+"paths": { 
+      "@item": ["item/index.ts"],
+    }
+```
+
+y así se podría importar
+
+`import { Item }  from  '@item'`
+
+## Webpack y agrupación de módulos
+Es un empaquetador de módulos.
+
+`npm init -y`
+- instalación de TypeScript y Webpack:`npm install typescript webpack webpack-cli --save-dev`,`npm istall ts-loader --save-dev`.
+- `webpack.config.js`:
+```javascript
+module.exports = {
+    mode: 'production',
+    entry: './src/main.ts',
+    devtool: 'incline-source-map',
+    module:{
+        rules:[
+            test:/\.ts/,
+            use:'ts-loader',
+            exclude:/node_modules/
+        ]
+    },
+    resolve: {
+        extensions: ['.ts', '.js'],
+    },
+    output: {
+        filename: 'bundle.js',
+    }
+}
+```
