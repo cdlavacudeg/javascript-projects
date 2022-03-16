@@ -207,3 +207,152 @@ interface Album extends Entity{
     description:string;
 };
 ```
+
+## Clases en TypeScirpt
+```typescript
+class Picture{
+    // Propiedades
+    id:number;
+    title: string;
+    orientation: PhotoOrientation;
+
+    constructor(id:number,title:string,orientation:PhotoOrientation){
+        this.id=id;
+        this.title=title;
+        this.orientation=orientation;
+    }
+
+    // Comportamiento, metodos
+    toString(){
+        return `[id:${this.id},
+                 title:${this.title},
+                 orientation:${this.orientation}]`;
+    }
+}
+
+class Album{
+    id:number;
+    title:string;
+    pictures: Picture[];
+
+    constructor(id:number,title:string,){
+        this.id=id;
+        this.title=title;
+        this.pictures=[];
+    }
+
+    addPicture(picture:Picture){
+        this.pictures.push(picture);
+    }
+}
+```
+### Clases públicas y privadas
+- public: por defecto son públicos pero se pueden marcar explicitamente con la palabra reservada `public`.
+- private: no es posible accedor a las propiedades, palabra reservada `private`.También soporta( a parter do la versión 3.8) la nueva sintaxis JavaScript para miembros privados: `#atributo`.Esta caracteristica puede ofrecer mejores garantías de aislamiento en miembros privados ya que no muestra los atributos a diferencia de `private`.
+
+#### Metodos set y get
+TypeScirpt soporta las métodos accesares set y get como una farma de iterceptar los accesos a los miembros privados de un objeto.
+
+Convirtamos una clase simple para usar get y set. Primero, empecemos con un ejemplo sin getters y setters.
+
+```typescript
+class Employee {
+  fullName: string;
+}
+
+let employee = new Employee();
+employee.fullName = "Bob Smith";
+
+if (employee.fullName) {
+  console.log(employee.fullName);
+}
+```
+
+Aunque permitir que la gente establezca directamente el nombre completo al azar es bastante útil, también podemos querer imponer algunas restricciones cuando se establece el nombre completo.
+
+En esta versión, añadimos un configurador que comprueba la longitud del nuevo Nombre para asegurarse de que es compatible con la longitud máxima de nuestro campo de base de datos de respaldo. Si no lo es, arrojamos un error notificando al código del cliente que algo salió mal.
+
+Para preservar la funcionalidad existente, también añadimos un simple programa que recupera el nombre completo sin modificar.
+
+```typescript
+const fullNameMaxLength = 10;
+
+class Employee {
+  private _fullName: string;
+
+  get fullName(): string {
+    return this._fullName;
+  }
+
+  set fullName(newName: string) {
+    if (newName && newName.length > fullNameMaxLength) {
+      throw new Error("fullName has a max length of " + fullNameMaxLength);
+    }
+
+    this._fullName = newName;
+  }
+}
+
+let employee = new Employee();
+employee.fullName = "Bob Smith";
+
+if (employee.fullName) {
+  console.log(employee.fullName);
+}
+```
+Para probarnos a nosotros mismos que nuestro accesorio está comprobando ahora la longitud de los valores, podemos intentar asignar un nombre de más de 10 caracteres y verificar que obtenemos un error.
+
+Un par de cosas a tener en cuenta sobre los accesorios:
+
+Primero, los accessores requieren que el compilador dé como resultado ECMAScript 5 o superior. La bajada de nivel a ECMAScript 3 no está soportada. Segundo, los accesorios con un get y sin set se infieren automáticamente para ser de solo lectura. Esto es útil cuando se genera un archivo.d.ts a partir de su código, porque los usuarios de su propiedad pueden ver que no pueden cambiarlo.
+
+### Herencia de clases y propiedades estáticas
+```typescript
+// Super clase
+class Item{
+    protected _id:number;
+    title: string;
+    
+    constructor(id:number,title:string){
+        this._id=id;
+        this.title=title;
+        
+    }
+    // getters y setters
+    get id(){
+        return this._id;
+    }
+
+    set id(id:number){
+        this._id=id;
+    }
+}
+class Picture extends Item{
+    // Propiedades
+    orientation: PhotoOrientation;
+
+    constructor(id:number,title:string,orientation:PhotoOrientation){
+        super(id,title);
+        // this._id=id;
+        // this.title=title;
+        this.orientation=orientation;
+    }
+    
+    
+    // Comportamiento, metodos
+    toString(){
+        return `[id:${this.id},
+                 title:${this.title},
+                 orientation:${this.orientation}]`;
+    }
+
+}
+```
+### Clases abstractas
+San la base donde otras clases podrían derivarse. A diferencia de una Interfaz, una clase abstracta puede implementar funcionos para sus instancias.La palabra reservada es `abstract`.
+
+### Propiedades estáticas y propiedades de solo lectura
+Las clases por al general definen atributas y métodas aplicable a las instancias de las mismas.
+A través de la palabra resarvada `static` se puede definer un miembro visible a nivel de clase que para emplearlo no es necesario una intancia.
+
+Al igual que las interfaces, podemos usar la palabra reservada `readonly` para marcar el miembro de una clase como solo lo lectura.
