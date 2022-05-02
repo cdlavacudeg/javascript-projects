@@ -39,3 +39,21 @@ En ocasiones podemos pasar un key distintito puede generar el mismo hash colisio
 #### RESUMEN: 
 Las hash tables se parecen a los objetos porque podemos guardar valores por llave, valor. Pero su principal diferencia es que genera un hash para cada llave valor. El único problema es que se puede generar un mismo hash colisionando con el anterior
 
+## Linked list
+Ciertos nodos, head-(pointer)-> nodo ....->tail.
+En estas listas se va buscando linealmente de nodo en nodo y va paso por paso en la secuencia de nodos.
+
+Empieza en el head hasta llegar al valor, en una single list list no te puedes regresar, las pointers estan ligados solo al siguiente nodo.
+
+En las single list list los datos se guardan con apuntadores a diversos memory slot.
+### Métodos
+- prepend -> Agregar un Nodo al inicio
+- append -> Agregar un Nodo al final
+- Lookup/search -> Buscar un Nodo
+- insert -> Insertar un Nodo en la lista
+- delete -> Borrar un nodo
+
+### Doubly Linked list
+Una doubly linked list tiene el mismo comportamiento que una simply linked list, pero con la particularidad de que esta SI puede regresar. Aún necesita ir moviéndose una por una, pero ahora si lo desea puede regresar porque ya conoce quién es su elemento anterior y también quién es el siguiente, es decir, ya no es necesario repetir el ciclo.
+
+
